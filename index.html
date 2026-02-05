@@ -1,98 +1,147 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cloudpoint Systems Ltd | Enterprise IT Solutions</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050505; color: #fff; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .gradient-text { background: linear-gradient(90deg, #4F46E5, #EF4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .service-card:hover { border-color: #4F46E5; transform: scale(1.02); }
+        body { font-family: 'Outfit', sans-serif; background-color: #ffffff; color: #1a1a1a; }
+        .hero-gradient { background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); }
+        .card-shadow { box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05); transition: all 0.3s ease; }
+        .card-shadow:hover { transform: translateY(-10px); box-shadow: 0 20px 40px -5px rgba(59, 130, 246, 0.1); }
+        .nav-link:hover { color: #2563eb; }
     </style>
 </head>
-<body>
+<body class="antialiased">
 
-    <nav class="fixed w-full z-50 glass mt-4 mx-auto max-w-6xl left-0 right-0 rounded-2xl px-6 py-4 flex justify-between items-center">
-        <img src="/assets/logo.png" alt="Cloudpoint" class="h-8 md:h-10">
-        <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-semibold">
-            <a href="index.html" class="hover:text-blue-500">Home</a>
-            <a href="#services" class="hover:text-blue-500">Solutions</a>
-            <a href="about.html" class="hover:text-blue-500">About</a>
-            <a href="contact.html" class="bg-blue-600 px-5 py-2 rounded-lg hover:bg-blue-700 transition">Get a Quote</a>
+    <div class="bg-blue-900 text-white text-xs py-2 px-6 flex justify-between items-center">
+        <span>Cloudpoint Systems Ltd — Transform at Scale</span>
+        <div class="hidden md:flex space-x-4">
+            <span>📞 +234-xxx-xxx-xxxx</span>
+            <span>✉️ info@cloudpointsystems.com</span>
+        </div>
+    </div>
+
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <img src="assets/logo.png" alt="Cloudpoint Logo" class="h-10 md:h-12">
+            <div class="hidden md:flex items-center space-x-10 font-medium text-gray-700">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#services" class="nav-link">Our Services</a>
+                <a href="#contact" class="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition shadow-lg shadow-blue-200">Request for Quote</a>
+            </div>
         </div>
     </nav>
 
-    <section class="pt-40 pb-20 px-6 text-center">
-        <span class="text-blue-500 font-bold tracking-tighter uppercase text-sm">Next-Gen IT Infrastructure</span>
-        <h1 class="text-5xl md:text-8xl font-extrabold mt-4 mb-8 leading-tight">
-            Transform at <span class="gradient-text">Scale.</span>
-        </h1>
-        <p class="text-gray-400 max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
-            As a Cisco Gold Partner and systems integrator, Cloudpoint Systems Ltd designs high-performance Data Centers, Secure Networks, and Hybrid Cloud architectures.
-        </p>
-        <div class="mt-12 flex flex-col md:flex-row justify-center gap-4">
-            <a href="#services" class="bg-white text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-200">Explore Solutions</a>
-            <a href="contact.html" class="glass px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10">Consult an Expert</a>
-        </div>
-    </section>
-
-    <section id="services" class="max-w-7xl mx-auto px-6 py-24">
-        <div class="flex justify-between items-end mb-16">
+    <section class="hero-gradient py-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div>
-                <h2 class="text-4xl font-bold">Our Core Expertise</h2>
-                <p class="text-gray-500 mt-2">End-to-End solutions for the modern enterprise.</p>
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                    Powering Businesses with <span class="text-blue-600">Cutting-Edge</span> IT Solutions
+                </h1>
+                <p class="text-lg text-gray-600 mb-10 leading-relaxed">
+                    Cloudpoint Systems Limited drives efficiency through innovative technology. From secure networking to hybrid cloud architecture, we transform technology into your strategic advantage.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#services" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition">Explore Services</a>
+                    <a href="#contact" class="bg-white border border-gray-200 text-gray-700 px-8 py-4 rounded-xl font-bold hover:bg-gray-50 transition">Free Consultation</a>
+                </div>
             </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-            <div class="md:col-span-8 glass p-10 rounded-[2rem] service-card transition duration-500">
-                <div class="bg-blue-600/20 w-12 h-12 rounded-lg flex items-center justify-center mb-6">🌐</div>
-                <h3 class="text-3xl font-bold mb-4">Enterprise & Datacenter Networking</h3>
-                <p class="text-gray-400 text-lg">Build secure, high-performance networks leveraging Cisco ACI, SD-WAN, and Metro Fiber. We optimize network downtime and automate operations.</p>
-            </div>
-
-            <div class="md:col-span-4 glass p-10 rounded-[2rem] service-card transition duration-500">
-                <div class="bg-red-600/20 w-12 h-12 rounded-lg flex items-center justify-center mb-6">🛡️</div>
-                <h3 class="text-2xl font-bold mb-4">Cybersecurity</h3>
-                <p class="text-gray-400">Detect faster, respond smarter. From Firewalls to SIEM and Endpoint Security.</p>
-            </div>
-
-            <div class="md:col-span-4 glass p-10 rounded-[2rem] service-card transition duration-500">
-                <div class="bg-purple-600/20 w-12 h-12 rounded-lg flex items-center justify-center mb-6">☁️</div>
-                <h3 class="text-2xl font-bold mb-4">Cloud & Infrastructure</h3>
-                <p class="text-gray-400">Hyperconverged infrastructure (Nutanix/VMware) for speed and agility.</p>
-            </div>
-
-            <div class="md:col-span-8 glass p-10 rounded-[2rem] service-card transition duration-500">
-                <div class="bg-green-600/20 w-12 h-12 rounded-lg flex items-center justify-center mb-6">💾</div>
-                <h3 class="text-3xl font-bold mb-4">Intelligent Data Management</h3>
-                <p class="text-gray-400 text-lg">Partnering with Veeam and Pure Storage for all-flash solutions and automated backup/recovery analytics.</p>
+            <div class="relative">
+                <div class="absolute -inset-4 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800" alt="Tech Solutions" class="relative rounded-2xl shadow-2xl">
             </div>
         </div>
     </section>
 
-    <footer class="bg-zinc-950 py-20 px-6 border-t border-white/5">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+    <section id="services" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto text-center mb-16">
+            <h2 class="text-blue-600 font-bold tracking-widest uppercase text-sm mb-3">What We Do</h2>
+            <p class="text-4xl font-bold text-gray-900">Comprehensive Technology Services</p>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-10 rounded-3xl border border-gray-100 card-shadow">
+                <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-8">
+                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">IT Infrastructure & Security</h3>
+                <p class="text-gray-600 leading-relaxed mb-6">Empower your business with scalable, secure, and high-performance technology. We deliver advanced cybersecurity and cloud solutions to protect your digital assets.</p>
+                <a href="#" class="text-blue-600 font-bold hover:underline">Learn more →</a>
+            </div>
+
+            <div class="bg-white p-10 rounded-3xl border border-gray-100 card-shadow">
+                <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center mb-8">
+                    <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Managed Services & Support</h3>
+                <p class="text-gray-600 leading-relaxed mb-6">Optimize productivity with proactive IT support and business automation. Our end-to-end managed services keep your systems running smoothly 24/7.</p>
+                <a href="#" class="text-green-600 font-bold hover:underline">Learn more →</a>
+            </div>
+
+            <div class="bg-white p-10 rounded-3xl border border-gray-100 card-shadow">
+                <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center mb-8">
+                    <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Consulting & Capacity Building</h3>
+                <p class="text-gray-600 leading-relaxed mb-6">Stay ahead with expert IT strategy and tailored training programs. We equip your team with the innovative tools needed for long-term growth.</p>
+                <a href="#" class="text-purple-600 font-bold hover:underline">Learn more →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-gray-50 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+            <div class="flex-1">
+                <h2 class="text-4xl font-bold mb-6">Innovative, Future-Ready IT Solutions</h2>
+                <p class="text-gray-600 text-lg mb-8">At Cloudpoint, we combine deep industry expertise with cutting-edge technology to provide scalable and tailored solutions. Whether optimizing your infrastructure or enhancing security, we ensure success.</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex items-center space-x-2 font-semibold"><span class="text-blue-600">✓</span> <span>Trusted Experts</span></div>
+                    <div class="flex items-center space-x-2 font-semibold"><span class="text-blue-600">✓</span> <span>Proven Track Record</span></div>
+                    <div class="flex items-center space-x-2 font-semibold"><span class="text-blue-600">✓</span> <span>Tailored Solutions</span></div>
+                    <div class="flex items-center space-x-2 font-semibold"><span class="text-blue-600">✓</span> <span>Reliable Support</span></div>
+                </div>
+            </div>
+            <div class="flex-1 bg-blue-600 p-12 rounded-[3rem] text-white">
+                <div class="text-6xl font-bold mb-2">99%</div>
+                <div class="text-xl opacity-90 mb-8">Satisfied Customers</div>
+                <hr class="opacity-20 mb-8">
+                <h4 class="text-2xl font-bold mb-4">Start your transformation today</h4>
+                <p class="mb-8 opacity-80">Our specialists are ready to help you navigate your digital journey.</p>
+                <a href="#contact" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-xl font-bold">Contact Us Online</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-white pt-20 pb-10 px-6 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div class="col-span-2">
                 <img src="assets/logo.png" alt="Cloudpoint Logo" class="h-10 mb-6">
-                <p class="text-gray-500 max-w-sm">Leading the way in digital innovation and enterprise-grade IT transformation.</p>
+                <p class="text-gray-500 max-w-sm">Leading the way in digital innovation and enterprise-grade IT transformation since inception.</p>
             </div>
             <div>
-                <h4 class="font-bold mb-4">Quick Links</h4>
-                <ul class="text-gray-500 space-y-2">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
+                <h4 class="font-bold mb-6 text-gray-900 uppercase tracking-widest text-sm">Company</h4>
+                <ul class="text-gray-600 space-y-4">
+                    <li><a href="#" class="hover:text-blue-600 transition">About Us</a></li>
+                    <li><a href="#" class="hover:text-blue-600 transition">Our Services</a></li>
+                    <li><a href="#" class="hover:text-blue-600 transition">Latest Articles</a></li>
+                    <li><a href="#" class="hover:text-blue-600 transition">Contact Us</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold mb-4">Headquarters</h4>
-                <p class="text-gray-500">Tech Plaza, Suite 400<br>IT District, 10001</p>
+                <h4 class="font-bold mb-6 text-gray-900 uppercase tracking-widest text-sm">Follow Us</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition">In</a>
+                    <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition">X</a>
+                </div>
             </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 border-t border-gray-100 text-center text-gray-400 text-sm">
+            © 2025 Cloudpoint Systems Limited. All Rights Reserved.
         </div>
     </footer>
 
