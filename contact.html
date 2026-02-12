@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Cloudpoint Systems Ltd</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Outfit', sans-serif; }
+        .contact-hero { background: linear-gradient(135deg, #f8fafc 0%, #dbeafe 100%); }
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+
+    <div class="bg-blue-950 text-white text-[11px] md:text-xs py-2 px-6 flex justify-between items-center font-medium">
+        <span>Cloudpoint Systems Ltd — Enterprise Systems Integrator</span>
+        <div class="flex space-x-6">
+            <a href="tel:+2349029002279" class="hover:text-blue-400 transition">📞 +234 902 900 2279</a>
+            <span class="hidden md:inline">✉️ sales@cloudpointsystems.com.ng</span>
+        </div>
+    </div>
+
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html"><img src="assets/images/logo.png" alt="Cloudpoint Logo" class="h-10 md:h-12"></a>
+            <div class="hidden md:flex items-center space-x-8 font-semibold text-gray-700">
+                <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+                <a href="about.html" class="hover:text-blue-600 transition">About Us</a>
+                <a href="services.html" class="hover:text-blue-600 transition">Our Services</a>
+                <a href="contact.html" class="text-blue-600">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="contact-hero py-20 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-slate-900">Let’s Discuss Your <span class="text-blue-600">Business Needs</span></h1>
+            <p class="text-lg text-slate-600 leading-relaxed">Reach out to our team of experts for tailored IT solutions, managed support, or strategic technology consulting.</p>
+        </div>
+    </header>
+
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20">
+            
+            <div class="space-y-12">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 text-slate-900">Get in Touch</h2>
+                    <p class="text-slate-600 mb-8">Whether you have a specific project in mind or just want to learn more about how we can help your business grow, we’re here to listen.</p>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="flex items-start gap-6">
+                        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center shrink-0">📍</div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Our Location</h4>
+                            <p class="text-slate-500 text-sm">Cloudpoint Systems, 5, Kekereowo Street, Ilasa, Mushin, Lagos, Nigeria.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-6">
+                        <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center shrink-0">📞</div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Call / WhatsApp</h4>
+                            <a href="tel:+2349029002279" class="text-slate-500 text-sm hover:text-blue-600">+234 902 900 2279</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-6">
+                        <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center shrink-0">✉️</div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Email Support</h4>
+                            <p class="text-slate-500 text-sm">sales@cloudpointsystems.com.ng<br>info@cloudpointsystems.com.ng</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-100 h-64 grayscale hover:grayscale-0 transition duration-500">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3964.0226929827704!2d3.339841775477197!3d6.518810923216787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sng!4v1770930982479!5m2!1sen!2sng" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-2xl border border-slate-50">
+                <h3 class="text-2xl font-bold mb-8 text-slate-900">Send us a Message</h3>
+                <form id="contactForm" action="https://formspree.io/f/maqdwaoe" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-500 mb-2">First Name*</label>
+                        <input type="text" id="fname" name="firstname" required class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl outline-none focus:border-blue-500 transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Last Name</label>
+                        <input type="text" id="lname" name="lastname" class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl outline-none focus:border-blue-500 transition">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Email Address*</label>
+                        <input type="email" id="email" name="email" required class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl outline-none focus:border-blue-500 transition">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Request Category*</label>
+                        <select id="category" name="category" required class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl outline-none appearance-none cursor-pointer focus:border-blue-500 transition">
+                            <option value="">Choose a solution</option>
+                            <option value="Security">Cybersecurity</option>
+                            <option value="Cloud">Cloud Migration</option>
+                            <option value="Networking">Datacenter Networking</option>
+                            <option value="Support">Managed IT Services</option>
+                            <option value="Others">Other Services</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Message Details</label>
+                        <textarea id="details" name="details" rows="5" placeholder="Tell us about your project..." class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl outline-none focus:border-blue-500 transition"></textarea>
+                    </div>
+                    <div class="md:col-span-2 flex flex-col sm:flex-row gap-4 mt-4">
+                        <button type="submit" class="flex-1 bg-slate-900 text-white font-bold py-4 rounded-2xl hover:bg-black transition-all">Send via Email</button>
+                        <button type="button" onclick="sendWhatsApp()" class="flex-1 bg-green-600 text-white font-bold py-4 rounded-2xl hover:bg-green-700 transition-all">Send via WhatsApp</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-slate-100 pt-20 pb-10 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <img src="assets/images/logo.png" alt="Cloudpoint" class="h-10 mb-8 mx-auto">
+            <p class="text-slate-400 text-sm">© 2026 Cloudpoint Systems Limited. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function sendWhatsApp() {
+            const fname = document.getElementById('fname').value;
+            const email = document.getElementById('email').value;
+            const category = document.getElementById('category').value;
+            const details = document.getElementById('details').value;
+
+            if(!fname || !email || !category) {
+                alert("Please fill in the required fields.");
+                return;
+            }
+
+            const msg = `*NEW CONTACT MESSAGE*%0A*Name:* ${fname}%0A*Email:* ${email}%0A*Category:* ${category}%0A*Details:* ${details}`;
+            window.open(`https://wa.me/2349029002279?text=${msg}`, '_blank').focus();
+        }
+    </script>
+</body>
+</html>
