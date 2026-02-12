@@ -10,6 +10,8 @@
     <style>
         body { font-family: 'Outfit', sans-serif; }
         .hero-bg { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); }
+        #requestModal { display: none; }
+        #requestModal.active { display: flex; }
     </style>
 </head>
 <body class="bg-white text-slate-900">
@@ -21,7 +23,7 @@
                 <a href="index.html" class="hover:text-blue-600 transition">Home</a>
                 <a href="about.html" class="text-blue-600">About Us</a>
                 <a href="services.html" class="hover:text-blue-600 transition">Our Services</a>
-                <a href="contact.html" class="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition">Contact Us</a>
+                <button onclick="toggleModal()" class="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition">Quick Solution Request</button>
             </div>
         </div>
     </nav>
@@ -37,7 +39,7 @@
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
             <div class="space-y-6">
                 <h2 class="text-3xl font-bold text-blue-600 uppercase tracking-widest text-sm">Who We Are</h2>
-                <p class="text-xl text-slate-700 leading-relaxed">At Cloudpoint, we transform technology into a strategic advantage. Our expertise spans from high-performance networking to advanced cybersecurity, ensuring your business stays ahead in a competitive digital landscape.</p>
+                <p class="text-xl text-slate-700 leading-relaxed">At Cloudpoint, we transform technology into a strategic advantage. Our expertise spans from high-performance networking to advanced cybersecurity.</p>
                 <p class="text-slate-600">We drive efficiency through cutting-edge IT solutions, delivering tailored services that empower businesses to thrive. Our partnership with global OEMs like Cisco, Dell, and Microsoft allows us to deploy world-class infrastructure with local expertise.</p>
             </div>
             <div class="grid grid-cols-1 gap-8">
@@ -45,7 +47,7 @@
                     <h3 class="text-2xl font-bold mb-4 text-blue-900">Our Mission</h3>
                     <p class="text-slate-600">To provide innovative, scalable, and secure technology solutions that drive efficiency and growth for our clients across Africa and beyond.</p>
                 </div>
-                <div class="p-8 bg-blue-600 rounded-3xl text-white">
+                <div class="p-8 bg-blue-600 rounded-3xl text-white shadow-xl shadow-blue-200">
                     <h3 class="text-2xl font-bold mb-4">Our Vision</h3>
                     <p class="opacity-90">To be the most trusted systems integrator in the region, recognized for excellence in digital innovation and enterprise-grade support.</p>
                 </div>
@@ -76,6 +78,14 @@
         </div>
     </section>
 
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto bg-blue-600 rounded-[3rem] p-12 text-center text-white shadow-2xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 italic">"Ready to start your digital transformation journey?"</h2>
+            <p class="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">Our specialists are ready to help you navigate your business needs with the best-in-class technology solutions.</p>
+            <button onclick="toggleModal()" class="bg-white text-blue-600 px-12 py-4 rounded-xl font-bold hover:scale-105 transition transform">Request a Consultation</button>
+        </div>
+    </section>
+
     <footer class="bg-white border-t border-slate-100 pt-20 pb-10 px-6">
         <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-16">
             <div class="col-span-2">
@@ -83,17 +93,16 @@
                 <p class="text-slate-500 max-w-sm">Transforming technology into a strategic advantage for modern enterprises.</p>
             </div>
             <div>
-                <h5 class="font-bold mb-6 text-slate-900 uppercase text-xs tracking-widest">Company</h5>
-                <ul class="text-slate-500 space-y-3">
-                    <li><a href="about.html" class="hover:text-blue-600 transition">About us</a></li>
+                <h5 class="font-bold mb-6 text-slate-900 uppercase text-xs tracking-widest text-center md:text-left">Company</h5>
+                <ul class="text-slate-500 space-y-3 text-center md:text-left">
+                    <li><a href="index.html" class="hover:text-blue-600 transition">Home</a></li>
                     <li><a href="services.html" class="hover:text-blue-600 transition">Our Services</a></li>
                     <li><a href="contact.html" class="hover:text-blue-600 transition">Contact</a></li>
                 </ul>
             </div>
             <div>
-                <h5 class="font-bold mb-6 text-slate-900 uppercase text-xs tracking-widest">Connect</h5>
-                <p class="text-slate-500 text-sm mb-2">Monday to Friday: 9 am – 5 pm</p>
-                <a href="tel:+2349029002279" class="text-blue-600 font-bold">+234 902 900 2279</a>
+                <h5 class="font-bold mb-6 text-slate-900 uppercase text-xs tracking-widest text-center md:text-left">Connect</h5>
+                <a href="tel:+2349029002279" class="text-blue-600 font-bold block text-center md:text-left">+234 902 900 2279</a>
             </div>
         </div>
         <div class="text-center text-slate-400 text-sm pt-8 border-t border-slate-50">
@@ -101,5 +110,70 @@
         </div>
     </footer>
 
+    <div id="requestModal" class="fixed inset-0 bg-slate-950/60 z-[100] backdrop-blur-sm items-center justify-center p-4">
+        <div class="bg-white rounded-[2.5rem] w-full max-w-2xl overflow-hidden shadow-2xl relative max-h-[95vh] overflow-y-auto">
+            <button onclick="toggleModal()" class="absolute top-8 right-8 text-slate-400 hover:text-slate-900 text-3xl transition">&times;</button>
+            <div class="p-8 md:p-14">
+                <h3 class="text-3xl font-bold text-slate-900 mb-3">Quick Solution Request</h3>
+                <p class="text-slate-500 mb-10">Select your preferred submission method below.</p>
+                <form id="solutionForm" action="https://formspree.io/f/maqdwaoe" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-500 mb-2">First Name*</label>
+                        <input type="text" id="fname" name="firstname" required class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl outline-none focus:border-blue-500 transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Last Name</label>
+                        <input type="text" id="lname" name="lastname" class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl outline-none focus:border-blue-500 transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Email Address*</label>
+                        <input type="email" id="email" name="email" required class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl outline-none focus:border-blue-500 transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl outline-none focus:border-blue-500 transition">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Request Category*</label>
+                        <select id="category" name="category" required class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl outline-none appearance-none cursor-pointer focus:border-blue-500 transition">
+                            <option value="">Choose a specialized solution</option>
+                            <option value="Security">Cybersecurity & Data Protection</option>
+                            <option value="Cloud">Cloud Migration & Infrastructure</option>
+                            <option value="Collaboration">Collaboration & Productivity</option>
+                            <option value="AI">AI & Machine Learning Solutions</option>
+                            <option value="Networking">Datacenter & Enterprise Networking</option>
+                            <option value="Managed_Support">Managed IT & Support Services</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2 mt-6 flex flex-col sm:flex-row gap-4">
+                        <button type="submit" class="flex-1 bg-slate-900 text-white font-bold py-4 rounded-2xl hover:bg-black transition flex items-center justify-center gap-3">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            Email
+                        </button>
+                        <button type="button" onclick="sendWhatsApp()" class="flex-1 bg-green-600 text-white font-bold py-4 rounded-2xl hover:bg-green-700 transition flex items-center justify-center gap-3">
+                            Send WhatsApp
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal() {
+            const modal = document.getElementById('requestModal');
+            modal.classList.toggle('active');
+        }
+
+        function sendWhatsApp() {
+            const fname = document.getElementById('fname').value;
+            const lname = document.getElementById('lname').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const category = document.getElementById('category').value;
+            const msg = `*NEW SOLUTION REQUEST*%0A*Client:* ${fname} ${lname}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Category:* ${category}`;
+            window.open(`https://wa.me/2349029002279?text=${msg}`, '_blank').focus();
+        }
+    </script>
 </body>
 </html>
