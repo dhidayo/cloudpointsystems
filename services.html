@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services | Cloudpoint Systems Ltd</title>
+    <title>Detailed Services | Cloudpoint Systems Ltd</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,13 +14,12 @@
         #requestModal.active { display: flex; }
         .tab-content { display: none; }
         .tab-content.active { display: block; }
-        .tab-btn.active { border-bottom: 3px solid #2563eb; color: #2563eb; }
+        .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; }
         
-        /* OEM Scroller Animation */
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 7)); } }
-        .logo-slider { overflow: hidden; position: relative; width: 100%; background: #ffffff; padding: 20px 0; }
+        .logo-slider { overflow: hidden; position: relative; width: 100%; background: #ffffff; padding: 25px 0; }
         .logo-track { display: flex; width: calc(250px * 14); animation: scroll 30s linear infinite; }
-        .logo-item { width: 250px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #cbd5e1; font-size: 1.2rem; letter-spacing: 0.1em; }
+        .logo-item { width: 250px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #cbd5e1; font-size: 1.2rem; }
     </style>
 </head>
 <body class="bg-white text-slate-900">
@@ -47,92 +46,147 @@
 
     <header class="hero-bg py-24 px-6 text-center">
         <div class="max-w-5xl mx-auto">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-slate-900 leading-tight">Tailored IT Solutions for the <span class="text-blue-600">Modern Enterprise</span></h1>
-            <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">We don't just provide services; we engineer success. Explore our end-to-end capabilities as your preferred systems integrator.</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-slate-900 leading-tight">Expertly Engineered <span class="text-blue-600">IT Solutions</span></h1>
+            <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">We provide the technical depth and strategic foresight required to build, secure, and manage modern enterprise environments.</p>
         </div>
     </header>
-
-    <section class="py-16 bg-white px-6">
-        <div class="max-w-7xl mx-auto bg-slate-900 rounded-[3rem] p-10 md:p-20 text-white flex flex-col md:flex-row items-center gap-12">
-            <div class="flex-1">
-                <h2 class="text-3xl md:text-5xl font-bold mb-6">Unlocking Innovation at Every Layer</h2>
-                <p class="text-slate-400 text-lg leading-relaxed">In an era of rapid digital shift, staying competitive requires more than just hardware. Our services are designed to bridge the gap between legacy systems and future-ready architectures, ensuring your business is agile, secure, and always-on.</p>
-            </div>
-            <div class="flex-1 grid grid-cols-2 gap-6">
-                <div class="p-6 bg-white/5 border border-white/10 rounded-2xl"><h4 class="font-bold text-blue-400 text-2xl mb-2">Scalable</h4><p class="text-xs text-slate-400">Grows with your business needs.</p></div>
-                <div class="p-6 bg-white/5 border border-white/10 rounded-2xl"><h4 class="font-bold text-blue-400 text-2xl mb-2">Secure</h4><p class="text-xs text-slate-400">Zero-trust architecture focus.</p></div>
-                <div class="p-6 bg-white/5 border border-white/10 rounded-2xl"><h4 class="font-bold text-blue-400 text-2xl mb-2">Smart</h4><p class="text-xs text-slate-400">AI-driven insights & automation.</p></div>
-                <div class="p-6 bg-white/5 border border-white/10 rounded-2xl"><h4 class="font-bold text-blue-400 text-2xl mb-2">Stable</h4><p class="text-xs text-slate-400">24/7 Managed reliability.</p></div>
-            </div>
-        </div>
-    </section>
 
     <section class="py-24 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-wrap justify-center gap-6 md:gap-12 border-b border-slate-100 mb-16 overflow-x-auto whitespace-nowrap">
-                <button id="btn-infrastructure" onclick="openTab(event, 'infrastructure')" class="tab-btn active pb-4 font-bold text-slate-500 hover:text-blue-600 transition">Infrastructure & Security</button>
-                <button id="btn-cloud" onclick="openTab(event, 'cloud')" class="tab-btn pb-4 font-bold text-slate-500 hover:text-blue-600 transition">Cloud & AI</button>
-                <button id="btn-managed" onclick="openTab(event, 'managed')" class="tab-btn pb-4 font-bold text-slate-500 hover:text-blue-600 transition">Managed Support</button>
-                <button id="btn-consulting" onclick="openTab(event, 'consulting')" class="tab-btn pb-4 font-bold text-slate-500 hover:text-blue-600 transition">Consulting</button>
+                <button id="btn-infrastructure" onclick="openTab(event, 'infrastructure')" class="tab-btn active pb-4 font-bold text-slate-500 hover:text-blue-600 transition">Network & Security</button>
+                <button id="btn-cloud" onclick="openTab(event, 'cloud')" class="tab-btn pb-4 font-bold text-slate-500 hover:text-blue-600 transition">Cloud & Digital Workplace</button>
+                <button id="btn-managed" onclick="openTab(event, 'managed')" class="tab-btn pb-4 font-bold text-slate-500 hover:text-blue-600 transition">Managed IT & Business Continuity</button>
+                <button id="btn-consulting" onclick="openTab(event, 'consulting')" class="tab-btn pb-4 font-bold text-slate-500 hover:text-blue-600 transition">AI & Strategic Consulting</button>
             </div>
 
             <div id="infrastructure" class="tab-content active">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 class="text-3xl font-bold mb-6">Enterprise Infrastructure & Security</h2>
-                        <p class="text-slate-600 mb-8 leading-relaxed">Secure networking is the backbone of modern business. We specialize in Cisco-driven architectures and multi-layered security protocols.</p>
-                        <ul class="space-y-4 text-slate-700">
-                            <li><strong>✔ Networking:</strong> SD-WAN, Metro Fiber, and Cisco ACI.</li>
-                            <li><strong>✔ Security:</strong> Sophos XDR, Barracuda WAF, and TrendMicro Email Security.</li>
-                            <li><strong>✔ Datacenter:</strong> Dell/HPE Server lifecycle management.</li>
-                        </ul>
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-6">
+                        <h2 class="text-3xl font-bold text-slate-900">Enterprise Infrastructure & Cybersecurity</h2>
+                        <p class="text-slate-600 leading-relaxed">Our infrastructure solutions are built on the principles of high availability, scalability, and "Security by Design." We help organizations move away from fragmented setups to unified, software-defined environments.</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+                            <div class="p-4 bg-slate-50 rounded-2xl">
+                                <h4 class="font-bold text-blue-600 mb-2">Advanced Networking</h4>
+                                <ul class="text-sm text-slate-500 space-y-1">
+                                    <li>• Cisco ACI & SD-WAN</li>
+                                    <li>• Metro Fiber & VSAT</li>
+                                    <li>• Campus Switching & Routing</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-2xl">
+                                <h4 class="font-bold text-blue-600 mb-2">Cyber Defense</h4>
+                                <ul class="text-sm text-slate-500 space-y-1">
+                                    <li>• Sophos XDR & EDR</li>
+                                    <li>• Barracuda WAF & Email Security</li>
+                                    <li>• SIEM/SOC Integration</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 pt-4">Cloudpoint specializes in the deployment of **Zero-Trust Architectures**, ensuring that every access point within your corporate network is verified and encrypted.</p>
                     </div>
-                    <div><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?auto=format&fit=crop&q=80&w=800" class="rounded-3xl shadow-2xl"></div>
+                    <div>
+                        <img src="assets/images/networking.jpg" alt="Networking Infrastructure" class="rounded-[2.5rem] shadow-2xl border-8 border-slate-50">
+                    </div>
                 </div>
             </div>
 
             <div id="cloud" class="tab-content">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" class="rounded-3xl shadow-2xl"></div>
-                    <div>
-                        <h2 class="text-3xl font-bold mb-6">Cloud Transformation & AI</h2>
-                        <p class="text-slate-600 mb-8 leading-relaxed">Leverage the power of Microsoft Azure, AWS, and Google Cloud to modernize your legacy apps and deploy AI workflows.</p>
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 lg:order-1">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000" alt="Cloud Computing" class="rounded-[2.5rem] shadow-2xl border-8 border-slate-50">
+                    </div>
+                    <div class="order-1 lg:order-2 space-y-6">
+                        <h2 class="text-3xl font-bold text-slate-900">Cloud Migration & Digital Workplace</h2>
+                        <p class="text-slate-600 leading-relaxed">We accelerate your journey to the cloud by providing seamless migration services for data, applications, and workloads. Our focus is on optimizing cost while maximizing performance.</p>
                         <ul class="space-y-4 text-slate-700">
-                            <li><strong>✔ Migration:</strong> Seamless transition to Hybrid and Public Cloud.</li>
-                            <li><strong>✔ Modern Workplace:</strong> Microsoft 365 and Google Workspace integration.</li>
-                            <li><strong>✔ AI:</strong> Machine Learning models for business analytics.</li>
+                            <li class="flex gap-3">
+                                <span class="bg-blue-100 text-blue-600 w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold">1</span>
+                                <div><strong>Hybrid Cloud Architecture:</strong> Integration of on-premise servers with Azure, AWS, or GCP for a flexible, "best-of-both-worlds" setup.</div>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="bg-blue-100 text-blue-600 w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold">2</span>
+                                <div><strong>Modern Collaboration:</strong> Full deployment of Microsoft 365 and Google Workspace, including secure identity management (MFA/SSO).</div>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="bg-blue-100 text-blue-600 w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold">3</span>
+                                <div><strong>Application Modernization:</strong> Containerization and microservices to make your legacy apps cloud-native.</div>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <div id="managed" class="tab-content">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 class="text-3xl font-bold mb-6">Proactive Managed Services</h2>
-                        <p class="text-slate-600 mb-8 leading-relaxed">24/7 monitoring ensures your business never stops. We handle the patches while you focus on the projects.</p>
-                        <ul class="space-y-4 text-slate-700">
-                            <li><strong>✔ NOC/SOC:</strong> Proactive network and security monitoring.</li>
-                            <li><strong>✔ Backup:</strong> Veeam & Pure Storage disaster recovery.</li>
-                            <li><strong>✔ Support:</strong> On-site and remote expert troubleshooting.</li>
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-6">
+                        <h2 class="text-3xl font-bold text-slate-900">Managed IT & Business Continuity</h2>
+                        <p class="text-slate-600 leading-relaxed">Downtime is not an option for the modern enterprise. Our managed services provide a proactive safety net, covering everything from hardware maintenance to complex disaster recovery.</p>
+                        <div class="p-6 bg-blue-50 rounded-3xl border border-blue-100">
+                            <h4 class="font-bold text-blue-900 mb-3">Backup & Disaster Recovery</h4>
+                            <p class="text-sm text-slate-600">Utilizing **Veeam** and **Pure Storage**, we provide automated data backups with near-zero recovery time objectives (RTO). Your data remains safe from ransomware and physical failure.</p>
+                        </div>
+                        <ul class="grid grid-cols-2 gap-4 text-sm font-semibold text-slate-700">
+                            <li>✓ 24/7 NOC Monitoring</li>
+                            <li>✓ Patch Management</li>
+                            <li>✓ Remote Expert Support</li>
+                            <li>✓ On-site Hardware SLA</li>
                         </ul>
                     </div>
-                    <div><img src="https://images.unsplash.com/photo-1573161158362-559474b5d929?auto=format&fit=crop&q=80&w=800" class="rounded-3xl shadow-2xl"></div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1573161158362-559474b5d929?auto=format&fit=crop&q=80&w=1000" alt="Managed IT Services" class="rounded-[2.5rem] shadow-2xl border-8 border-slate-50">
+                    </div>
                 </div>
             </div>
 
             <div id="consulting" class="tab-content">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800" class="rounded-3xl shadow-2xl"></div>
-                    <div>
-                        <h2 class="text-3xl font-bold mb-6">Advisory & Capacity</h2>
-                        <p class="text-slate-600 mb-8 leading-relaxed">Expert IT consulting to ensure your technology roadmap aligns with your 5-year business goals.</p>
-                        <ul class="space-y-4 text-slate-700">
-                            <li><strong>✔ Audit:</strong> IT Infrastructure and Security audits.</li>
-                            <li><strong>✔ Strategy:</strong> Digital transformation and cloud adoption roadmaps.</li>
-                            <li><strong>✔ Training:</strong> Capacity building for in-house IT teams.</li>
-                        </ul>
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 lg:order-1">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1000" alt="Consulting and AI" class="rounded-[2.5rem] shadow-2xl border-8 border-slate-50">
                     </div>
+                    <div class="order-1 lg:order-2 space-y-6">
+                        <h2 class="text-3xl font-bold text-slate-900">AI, Machine Learning & Strategy</h2>
+                        <p class="text-slate-600 leading-relaxed">We help you move beyond traditional IT by integrating Artificial Intelligence and Machine Learning into your core business processes.</p>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-blue-600 pl-6">
+                                <h4 class="font-bold">Strategic IT Roadmap</h4>
+                                <p class="text-slate-500 text-sm">Aligning technology spend with business outcomes for maximum ROI.</p>
+                            </div>
+                            <div class="border-l-4 border-blue-600 pl-6">
+                                <h4 class="font-bold">Predictive Analytics</h4>
+                                <p class="text-slate-500 text-sm">Deploying ML models to anticipate market trends and operational bottlenecks.</p>
+                            </div>
+                            <div class="border-l-4 border-blue-600 pl-6">
+                                <h4 class="font-bold">Capacity Building</h4>
+                                <p class="text-slate-500 text-sm">Custom training programs to upscale your in-house IT workforce.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-950 text-white overflow-hidden relative">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-blue-600 rounded-full blur-[120px]"></div>
+        </div>
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold mb-8">Why Cloudpoint Services?</h2>
+            <p class="text-slate-400 text-lg mb-12 max-w-3xl mx-auto leading-relaxed">As a systems integrator, we bridge the gap between global technology OEMs and local business challenges. We don't just sell licenses; we deliver outcomes that transform how you work.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-3xl bg-white/5 border border-white/10">
+                    <h4 class="text-blue-400 font-bold text-xl mb-3">Proven Expertise</h4>
+                    <p class="text-slate-400 text-sm">Certified engineers across Cisco, Microsoft, and Sophos stacks.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-white/5 border border-white/10">
+                    <h4 class="text-blue-400 font-bold text-xl mb-3">24/7 Support</h4>
+                    <p class="text-slate-400 text-sm">Proactive monitoring ensuring your business never sleeps.</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-white/5 border border-white/10">
+                    <h4 class="text-blue-400 font-bold text-xl mb-3">Future-Ready</h4>
+                    <p class="text-slate-400 text-sm">Strategic roadmaps that grow alongside your enterprise.</p>
                 </div>
             </div>
         </div>
@@ -142,10 +196,9 @@
         <div class="logo-track">
             <div class="logo-item">CISCO</div><div class="logo-item">DELL</div><div class="logo-item">MICROSOFT</div>
             <div class="logo-item">SOPHOS</div><div class="logo-item">AWS</div><div class="logo-item">BARRACUDA</div>
-            <div class="logo-item">HPE</div>
+            <div class="logo-item">HPE</div><div class="logo-item">TRELLIX</div><div class="logo-item">TRENDMICRO</div>
             <div class="logo-item">CISCO</div><div class="logo-item">DELL</div><div class="logo-item">MICROSOFT</div>
             <div class="logo-item">SOPHOS</div><div class="logo-item">AWS</div><div class="logo-item">BARRACUDA</div>
-            <div class="logo-item">HPE</div>
         </div>
     </div>
 
@@ -153,10 +206,10 @@
         <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-16">
             <div class="col-span-2">
                 <img src="assets/images/logo.png" alt="Cloudpoint" class="h-10 mb-6">
-                <p class="text-slate-500 max-w-sm">Leading systems integrator providing end-to-end IT infrastructure and cybersecurity.</p>
+                <p class="text-slate-500 max-w-sm">Transforming technology into a strategic advantage for modern enterprises.</p>
             </div>
             <div>
-                <h5 class="font-bold mb-6 uppercase text-xs tracking-widest">Connect</h5>
+                <h5 class="font-bold mb-6 text-slate-900 uppercase text-xs tracking-widest">Connect</h5>
                 <a href="tel:+2349029002279" class="text-blue-600 font-bold block">+234 902 900 2279</a>
             </div>
         </div>
@@ -164,12 +217,11 @@
     </footer>
 
     <div id="requestModal" class="fixed inset-0 bg-slate-950/60 z-[100] backdrop-blur-sm items-center justify-center p-4">
-        <div class="bg-white rounded-[2.5rem] w-full max-w-2xl overflow-hidden shadow-2xl relative max-h-[95vh] overflow-y-auto">
+        <div class="bg-white rounded-[2.5rem] w-full max-w-2xl overflow-hidden shadow-2xl relative max-h-[95vh] overflow-y-auto text-left">
             <button onclick="toggleModal()" class="absolute top-8 right-8 text-slate-400 hover:text-slate-900 text-3xl transition">&times;</button>
             <div class="p-8 md:p-14">
                 <h3 class="text-3xl font-bold text-slate-900 mb-3">Quick Solution Request</h3>
                 <p class="text-slate-500 mb-10">Select your preferred submission method below.</p>
-                
                 <form id="solutionForm" action="https://formspree.io/f/maqdwaoe" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-xs font-bold uppercase text-slate-500 mb-2">First Name*</label>
@@ -189,7 +241,7 @@
                     </div>
                     <div class="md:col-span-2">
                         <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Request Category*</label>
-                        <select id="category" name="category" required class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl outline-none appearance-none cursor-pointer focus:border-blue-500 transition">
+                        <select id="category" name="category" required class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl outline-none focus:border-blue-500 transition">
                             <option value="">Choose a specialized solution</option>
                             <option value="Security">Cybersecurity & Data Protection</option>
                             <option value="Cloud">Cloud Migration & Infrastructure</option>
@@ -208,8 +260,8 @@
                         <textarea id="details" name="details" rows="3" class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl outline-none focus:border-blue-500 transition"></textarea>
                     </div>
                     <div class="md:col-span-2 flex flex-col sm:flex-row gap-4 mt-6">
-                        <button type="submit" class="flex-1 bg-slate-900 text-white font-bold py-4 rounded-2xl hover:bg-black transition-all">Send Email</button>
-                        <button type="button" onclick="sendWhatsApp()" class="flex-1 bg-green-600 text-white font-bold py-4 rounded-2xl hover:bg-green-700 transition-all">Send WhatsApp</button>
+                        <button type="submit" class="flex-1 bg-slate-900 text-white font-bold py-4 rounded-2xl hover:bg-black transition-all">Send via Email</button>
+                        <button type="button" onclick="sendWhatsApp()" class="flex-1 bg-green-600 text-white font-bold py-4 rounded-2xl hover:bg-green-700 transition-all">Send via WhatsApp</button>
                     </div>
                 </form>
             </div>
@@ -236,14 +288,15 @@
             const hash = window.location.hash.replace('#', '');
             if (hash) {
                 openTab(null, hash);
-                document.getElementById(hash).scrollIntoView();
+                document.getElementById(hash).scrollIntoView({ behavior: 'smooth' });
             }
         });
 
         function sendWhatsApp() {
             const fname = document.getElementById('fname').value;
             const category = document.getElementById('category').value;
-            const msg = `*NEW REQUEST*%0A*Name:* ${fname}%0A*Category:* ${category}`;
+            const title = document.getElementById('rtitle').value;
+            const msg = `*NEW SOLUTION REQUEST*%0A*Name:* ${fname}%0A*Category:* ${category}%0A*Subject:* ${title}`;
             window.open(`https://wa.me/2349029002279?text=${msg}`, '_blank').focus();
         }
     </script>
