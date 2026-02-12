@@ -10,6 +10,7 @@
     <style>
         body { font-family: 'Outfit', sans-serif; }
         .hero-bg { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); }
+        /* Modal Visibility Logic */
         #requestModal { display: none; }
         #requestModal.active { display: flex; }
     </style>
@@ -88,21 +89,22 @@
 
     <footer class="bg-white border-t border-slate-100 pt-20 pb-10 px-6">
         <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-16">
-            <div class="col-span-2">
-                <img src="assets/images/logo.png" alt="Cloudpoint" class="h-10 mb-6">
+            <div class="col-span-2 text-center md:text-left">
+                <img src="assets/images/logo.png" alt="Cloudpoint" class="h-10 mb-6 mx-auto md:mx-0">
                 <p class="text-slate-500 max-w-sm">Transforming technology into a strategic advantage for modern enterprises.</p>
             </div>
-            <div>
-                <h5 class="font-bold mb-6 text-slate-900 uppercase text-xs tracking-widest text-center md:text-left">Company</h5>
-                <ul class="text-slate-500 space-y-3 text-center md:text-left">
+            <div class="text-center md:text-left">
+                <h5 class="font-bold mb-6 text-slate-900 uppercase text-xs tracking-widest">Company</h5>
+                <ul class="text-slate-500 space-y-3">
                     <li><a href="index.html" class="hover:text-blue-600 transition">Home</a></li>
                     <li><a href="services.html" class="hover:text-blue-600 transition">Our Services</a></li>
                     <li><a href="contact.html" class="hover:text-blue-600 transition">Contact</a></li>
                 </ul>
             </div>
-            <div>
-                <h5 class="font-bold mb-6 text-slate-900 uppercase text-xs tracking-widest text-center md:text-left">Connect</h5>
-                <a href="tel:+2349029002279" class="text-blue-600 font-bold block text-center md:text-left">+234 902 900 2279</a>
+            <div class="text-center md:text-left">
+                <h5 class="font-bold mb-6 text-slate-900 uppercase text-xs tracking-widest">Connect</h5>
+                <p class="text-slate-500 text-sm mb-2">Monday to Friday: 9 am – 5 pm</p>
+                <a href="tel:+2349029002279" class="text-blue-600 font-bold block text-lg">+234 902 900 2279</a>
             </div>
         </div>
         <div class="text-center text-slate-400 text-sm pt-8 border-t border-slate-50">
@@ -116,6 +118,7 @@
             <div class="p-8 md:p-14">
                 <h3 class="text-3xl font-bold text-slate-900 mb-3">Quick Solution Request</h3>
                 <p class="text-slate-500 mb-10">Select your preferred submission method below.</p>
+                
                 <form id="solutionForm" action="https://formspree.io/f/maqdwaoe" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-xs font-bold uppercase text-slate-500 mb-2">First Name*</label>
@@ -145,13 +148,23 @@
                             <option value="Managed_Support">Managed IT & Support Services</option>
                         </select>
                     </div>
-                    <div class="md:col-span-2 mt-6 flex flex-col sm:flex-row gap-4">
-                        <button type="submit" class="flex-1 bg-slate-900 text-white font-bold py-4 rounded-2xl hover:bg-black transition flex items-center justify-center gap-3">
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Request Title</label>
+                        <input type="text" id="rtitle" name="title" class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl outline-none focus:border-blue-500 transition">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Request Details</label>
+                        <textarea id="details" name="details" rows="3" class="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl outline-none focus:border-blue-500 transition"></textarea>
+                    </div>
+
+                    <div class="md:col-span-2 flex flex-col sm:flex-row gap-4 mt-6">
+                        <button type="submit" class="flex-1 bg-slate-900 text-white font-bold py-4 rounded-2xl hover:bg-black transition-all flex items-center justify-center gap-3">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            Email
+                            Send via Email
                         </button>
-                        <button type="button" onclick="sendWhatsApp()" class="flex-1 bg-green-600 text-white font-bold py-4 rounded-2xl hover:bg-green-700 transition flex items-center justify-center gap-3">
-                            Send WhatsApp
+                        
+                        <button type="button" onclick="sendWhatsApp()" class="flex-1 bg-green-600 text-white font-bold py-4 rounded-2xl hover:bg-green-700 transition-all flex items-center justify-center gap-3">
+                            Send via WhatsApp
                         </button>
                     </div>
                 </form>
@@ -160,18 +173,36 @@
     </div>
 
     <script>
+        // Modal Control
         function toggleModal() {
             const modal = document.getElementById('requestModal');
             modal.classList.toggle('active');
         }
 
+        // WhatsApp Submission Handler
         function sendWhatsApp() {
             const fname = document.getElementById('fname').value;
             const lname = document.getElementById('lname').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
             const category = document.getElementById('category').value;
-            const msg = `*NEW SOLUTION REQUEST*%0A*Client:* ${fname} ${lname}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Category:* ${category}`;
+            const title = document.getElementById('rtitle').value;
+            const details = document.getElementById('details').value;
+
+            if(!fname || !email || !category) {
+                alert("Please complete the required fields (First Name, Email, and Category)");
+                return;
+            }
+
+            const msg = `*NEW SOLUTION REQUEST*%0A` +
+                        `--------------------------%0A` +
+                        `*Client:* ${fname} ${lname}%0A` +
+                        `*Email:* ${email}%0A` +
+                        `*Phone:* ${phone}%0A` +
+                        `*Category:* ${category}%0A` +
+                        `*Subject:* ${title}%0A` +
+                        `*Details:* ${details}`;
+
             window.open(`https://wa.me/2349029002279?text=${msg}`, '_blank').focus();
         }
     </script>
