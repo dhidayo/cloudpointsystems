@@ -1,4 +1,217 @@
-<div id="requestModal" class="fixed inset-0 bg-black/60 z-[100] backdrop-blur-sm items-center justify-center p-4">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudpoint Systems Ltd | Enterprise IT Solutions</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 7)); } }
+        .logo-slider { overflow: hidden; position: relative; width: 100%; }
+        .logo-track { display: flex; width: calc(250px * 14); animation: scroll 40s linear infinite; }
+        .logo-item { width: 250px; display: flex; align-items: center; justify-content: center; filter: grayscale(100%); opacity: 0.6; }
+        
+        /* Modal Styles */
+        #requestModal { display: none; }
+        #requestModal.active { display: flex; }
+    </style>
+</head>
+<body class="bg-white">
+
+    <div class="bg-blue-900 text-white text-xs py-2 px-6 flex justify-between items-center">
+        <span>Cloudpoint Systems Ltd — Transform at Scale</span>
+        <div class="flex space-x-4">
+            <span>📞 +2349029002279</span>
+            <span class="hidden md:inline">✉️ info@cloudpointsystems.com</span>
+        </div>
+    </div>
+
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html"><img src="assets/images/logo.png" alt="Cloudpoint Logo" class="h-10"></a>
+            <div class="hidden md:flex items-center space-x-8 font-semibold text-gray-700">
+                <a href="index.html" class="text-blue-600">Home</a>
+                <a href="about.html" class="hover:text-blue-600 transition">About Us</a>
+                <a href="services.html" class="hover:text-blue-600 transition">Our Services</a>
+                <button onclick="toggleModal()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Quick Solution Request</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-slate-50 py-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-blue-600 font-bold uppercase tracking-widest text-sm">Welcome to Cloudpoint Systems</span>
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mt-4 mb-6 leading-tight">Powering Businesses with <span class="text-blue-600">Cutting-Edge</span> IT Solutions</h1>
+                <p class="text-lg text-gray-600 mb-10 leading-relaxed">We deliver tailored technology services that empower businesses to thrive. From secure networking to hybrid cloud, we ensure seamless integration and scalable growth.</p>
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="toggleModal()" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold shadow-lg shadow-blue-200 hover:-translate-y-1 transition">Request a Solution</button>
+                    <a href="services.html" class="bg-white border border-gray-200 text-gray-700 px-8 py-4 rounded-xl font-bold hover:bg-gray-50 transition">View All Services</a>
+                </div>
+            </div>
+            <div class="hidden md:block">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="Cybersecurity" class="rounded-3xl shadow-2xl border-8 border-white">
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto text-center mb-16">
+            <h2 class="text-blue-600 font-bold uppercase tracking-widest text-sm mb-2">What We Do</h2>
+            <h3 class="text-4xl font-bold text-gray-900">Comprehensive IT & Technology Services</h3>
+        </div>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 mb-16">
+            <div class="card p-10 border border-gray-100 rounded-3xl shadow-xl">
+                <h4 class="text-2xl font-bold mb-4">IT Infrastructure & Security</h4>
+                <p class="text-gray-600 mb-6">Build secure, high-performance environments with cloud solutions and advanced cybersecurity.</p>
+                <a href="services.html#infrastructure" class="text-blue-600 font-bold">Learn More →</a>
+            </div>
+            <div class="card p-10 border border-gray-100 rounded-3xl shadow-xl">
+                <h4 class="text-2xl font-bold mb-4">Managed Services & Support</h4>
+                <p class="text-gray-600 mb-6">Proactive IT support and business automation to keep your systems running smoothly.</p>
+                <a href="services.html#managed" class="text-green-600 font-bold">Learn More →</a>
+            </div>
+            <div class="card p-10 border border-gray-100 rounded-3xl shadow-xl">
+                <h4 class="text-2xl font-bold mb-4">IT Consulting & Capacity</h4>
+                <p class="text-gray-600 mb-6">Expert advisory and training programs to drive digital transformation.</p>
+                <a href="services.html#consulting" class="text-purple-600 font-bold">Learn More →</a>
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="services.html" class="inline-flex items-center justify-center px-10 py-4 border-2 border-blue-600 text-blue-600 font-bold rounded-full hover:bg-blue-600 hover:text-white transition group">
+                Explore All Services
+                <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+        </div>
+    </section>
+
+    <section class="py-12 border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 mb-8 text-center text-gray-400 font-semibold uppercase tracking-widest text-xs">Strategic Partnerships with Industry Leaders</div>
+        <div class="logo-slider">
+            <div class="logo-track">
+                <div class="logo-item"><span class="font-bold text-2xl">MICROSOFT</span></div>
+                <div class="logo-item"><span class="font-bold text-2xl">CISCO</span></div>
+                <div class="logo-item"><span class="font-bold text-2xl">DELL</span></div>
+                <div class="logo-item"><span class="font-bold text-2xl">SOPHOS</span></div>
+                <div class="logo-item"><span class="font-bold text-2xl">GOOGLE</span></div>
+                <div class="logo-item"><span class="font-bold text-2xl">HPE</span></div>
+                <div class="logo-item"><span class="font-bold text-2xl text-blue-600">BARRACUDA</span></div>
+                <div class="logo-item"><span class="font-bold text-2xl">MICROSOFT</span></div>
+                <div class="logo-item"><span class="font-bold text-2xl">CISCO</span></div>
+                <div class="logo-item"><span class="font-bold text-2xl">DELL</span></div>
+                <div class="logo-item"><span class="font-bold text-2xl text-blue-600">BARRACUDA</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white px-6 text-center">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div><div class="text-5xl font-extrabold text-blue-600 mb-2">150+</div><p class="text-gray-500 font-medium">Projects Completed</p></div>
+            <div><div class="text-5xl font-extrabold text-blue-600 mb-2">10+</div><p class="text-gray-500 font-medium">Global OEM Partners</p></div>
+            <div><div class="text-5xl font-extrabold text-blue-600 mb-2">99%</div><p class="text-gray-500 font-medium">Client Retention</p></div>
+            <div><div class="text-5xl font-extrabold text-blue-600 mb-2">24/7</div><p class="text-gray-500 font-medium">Expert Support</p></div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-50 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+            <div class="flex-1">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Why Work With Us</h2>
+                <p class="text-gray-600 text-lg mb-8 leading-relaxed">We deliver innovative, future-ready IT solutions that drive business growth. At Cloudpoint, we combine deep industry expertise with cutting-edge technology.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-4 bg-white rounded-xl border border-gray-100 font-semibold">🛡️ Advanced Security</div>
+                    <div class="p-4 bg-white rounded-xl border border-gray-100 font-semibold">🤝 Trusted Experts</div>
+                    <div class="p-4 bg-white rounded-xl border border-gray-100 font-semibold">📊 Proven Track Record</div>
+                    <div class="p-4 bg-white rounded-xl border border-gray-100 font-semibold">🚀 Scalable Tech</div>
+                </div>
+            </div>
+            <div class="flex-1 w-full">
+                <div class="bg-blue-600 p-12 rounded-[3rem] text-white shadow-2xl">
+                    <h3 class="text-3xl font-bold mb-6 italic">"Empowering businesses with innovative technology solutions."</h3>
+                    <button onclick="toggleModal()" class="inline-block bg-white text-blue-600 px-10 py-4 rounded-xl font-bold hover:shadow-lg transition">Get Free Consultation</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-gray-100 pt-20 pb-10 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-2">
+                <img src="assets/images/logo.png" alt="Cloudpoint" class="h-10 mb-6">
+                <p class="text-gray-500 max-w-sm">Transforming technology into a strategic advantage.</p>
+            </div>
+            <div>
+                <h5 class="font-bold mb-6 text-gray-900 uppercase text-xs tracking-widest">Connect</h5>
+                <a href="tel:+2349029002279" class="text-blue-600 font-bold text-lg">+234 902 900 2279</a>
+            </div>
+        </div>
+        <div class="text-center text-gray-400 text-sm pt-8 border-t border-gray-50">© 2026 Cloudpoint Systems Limited.</div>
+    </footer>
+
+    <div id="requestModal" class="fixed inset-0 bg-black/60 z-[100] backdrop-blur-sm items-center justify-center p-4">
+        <div class="bg-white rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl relative">
+            <button onclick="toggleModal()" class="absolute top-6 right-6 text-gray-400 hover:text-gray-900 text-2xl">&times;</button>
+            <div class="p-8 md:p-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-2">Quick Solution Request</h3>
+                <p class="text-gray-500 mb-8">Fill the form below and our sales team will reach out shortly.</p>
+                
+                <form action="https://formspree.io/f/maqdwaoe" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">First Name*</label>
+                        <input type="text" name="firstname" required class="w-full bg-gray-50 border border-gray-200 p-3 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Last Name</label>
+                        <input type="text" name="lastname" class="w-full bg-gray-50 border border-gray-200 p-3 rounded-lg outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Email Address*</label>
+                        <input type="email" name="email" required class="w-full bg-gray-50 border border-gray-200 p-3 rounded-lg outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Phone Number</label>
+                        <input type="tel" name="phone" class="w-full bg-gray-50 border border-gray-200 p-3 rounded-lg outline-none">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-semibold mb-2">Request Category*</label>
+                        <select name="category" required class="w-full bg-gray-50 border border-gray-200 p-3 rounded-lg outline-none cursor-pointer">
+                            <option value="">Select a Category</option>
+                            <option value="Security">Security & Cybersecurity</option>
+                            <option value="Cloud">Cloud Infrastructure (AWS/Azure/GCP)</option>
+                            <option value="Collaboration">Modern Workplace & Collaboration</option>
+                            <option value="AI_ML">AI & Machine Learning</option>
+                            <option value="Networking">Networking & Data Center</option>
+                            <option value="Managed_Services">Managed IT Services</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-semibold mb-2">Request Title</label>
+                        <input type="text" name="title" class="w-full bg-gray-50 border border-gray-200 p-3 rounded-lg outline-none">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-semibold mb-2">Request Details</label>
+                        <textarea name="details" rows="4" class="w-full bg-gray-50 border border-gray-200 p-3 rounded-lg outline-none"></textarea>
+                    </div>
+                    <div class="md:col-span-2 mt-4">
+                        <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition">Send Solution Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal() {
+            const modal = document.getElementById('requestModal');
+            modal.classList.toggle('active');
+        }
+    </script>
+
+    <div id="requestModal" class="fixed inset-0 bg-black/60 z-[100] backdrop-blur-sm items-center justify-center p-4">
         <div class="bg-white rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl relative max-h-[95vh] overflow-y-auto">
             <button onclick="toggleModal()" class="absolute top-6 right-6 text-gray-400 hover:text-gray-900 text-2xl">&times;</button>
             <div class="p-8 md:p-12">
